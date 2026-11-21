@@ -1,0 +1,1 @@
+This repo contains cleaned up code for recrating much of my experiments on the Andrews - Curtis Conjecture
