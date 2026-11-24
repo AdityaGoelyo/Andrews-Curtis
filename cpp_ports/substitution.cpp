@@ -29,11 +29,11 @@
 // ---------------------------------------------------------------------------
 
 // letters are 1, -1, 2, -2 as in Python, but stored in one byte each.
-using Word = std::vector<int8_t>;
+using ac::Word;
 
 // A presentation: R[0] and R[1]. std::array compares like a Python tuple,
 // which the priority queue needs for breaking ties (see QueueEntry).
-using Presentation = std::array<Word, 2>;
+using ac::Presentation;
 
 using ac::SubsMove;   // the four numbers (i, j, k1, k2), from common.hpp
 
