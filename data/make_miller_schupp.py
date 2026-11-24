@@ -5,8 +5,8 @@ import argparse
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('-n', '--n', type = int, default=7)
-    parser.add_argument('-w', '--w', type = int, default=7)
+    parser.add_argument('-n', '--n', type = int, default=7, help="the n upto which all MS(n, w) are computed (default = 7)")
+    parser.add_argument('-w', '--w', type = int, default=7, help="the integer w unto which words of total length < w are computed (default = 7)")
     args = parser.parse_args()
 
     M = args.n
