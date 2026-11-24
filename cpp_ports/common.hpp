@@ -14,6 +14,7 @@
 #include <stdexcept>
 #include <string>
 #include <vector>
+#include <cstdint>
 
 namespace ac {
 
@@ -23,7 +24,7 @@ namespace ac {
 
 // A relator (word) is a list of nonzero ints:  1 = x, -1 = x^-1, 2 = y, -2 = y^-1.
 // Python: a list / tuple of ints.
-using Word = std::vector<int>;
+using Word = std::vector<int8_t>;
 
 // A presentation is a pair of relators, indexed R[0] and R[1] just like in Python.
 // std::array compares lexicographically, exactly like a Python tuple, which
@@ -160,7 +161,7 @@ inline int conj_offset(int g) {
 // r <- g r g^-1, and record the matching AC move in `path`.
 inline Word conj(const Word& r, int g, int idx, std::vector<int>& path) {
     path.push_back(6 + 4 * idx + conj_offset(g));
-    Word w = {g};
+    Word w = {(int8_t)g};
     w.insert(w.end(), r.begin(), r.end());
     w.push_back(-g);
     return reduce(w);
