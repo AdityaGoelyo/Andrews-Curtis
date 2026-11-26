@@ -92,6 +92,24 @@ def apply_AC(R, move):
         raise ValueError(f"move must be in 0..13, got {move}")
     return [reduce(r0), reduce(r1)]
 
+inverses = {0:0,
+            1:1,
+            2:3,
+            3:2,
+            4:5,
+            5:4,
+            6:7,
+            7:6,
+            8:9,
+            9:8,
+            10:11,
+            11:10,
+            12:13,
+            13:12}
+
+def inverse_move(move):
+    return inverses[move]
+
 CONJ = {1: 0, -1: 1, 2: 2, -2: 3}
 
 def conj(r, g, idx, path):
